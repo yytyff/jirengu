@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+		.box{
+			height: 100px;
+			width:100px;
+			background: red;
+		}
+		.box.active{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+<input type="text" id="username">
+<img class="avatar" src="https://jirengu.com/data/upload/2017/0118/17/587f39fba695a.png" alt="">
+
+<button class="btn1">图片1</button>
+<button class="btn2">图片2</button>
+
+<ul class="img-list">
+	<li data-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4195805644,827754888&fm=117&gp=0.jpg">1
+	</li>
+	<li data-src="http://n.sinaimg.cn/news/20170601/t5Zh-fyfuzny1699424.jpg">2
+	</li>
+	<li data-src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=333f3ac494510fb367197097e932c893/a8014c086e061d95df89434571f40ad163d9ca84.jpg">3
+	</li>
+	<li data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4271053251,2424464488&fm=117&gp=0.jpg">4
+	</li>
+</ul>
+
+<button class="btn3">添加</button>
+<div class="box"></div>
+<button class="btn4">变色1</button>
+<button class="btn5">变色2</button>
+<button class="btn6">变色</button>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+//原生JS：
+	document.querySelectorAll('#username')
+	document.querySelector('#username').value
+
+//jQuery：
+	//$('#username').val()
+	//$('#username').val('ddd')
+
+	//$('.avatar').attr()
+	//$('.avatar').attr('src')//"https://jirengu.com/data/upload/2017/0118/17/587f39fba695a.png"
+
+	var $avatar = $('.avatar');
+
+	$('.btn1').on('click',function(){
+		 $avatar.attr('src','http://n.sinaimg.cn/news/20170601/t5Zh-fyfuzny1699424.jpg')
+	})
+	$('.btn2').on('click',function(){
+		 $avatar.attr('src','https://jirengu.com/data/upload/2017/0118/17/587f39fba695a.png')
+	})
+
+	$('.img-list>li').on('click',function(){
+		console.log(this);
+		//var url = this.getAttribute('data-src');原生JS写法
+		var url = $(this).attr('data-src');
+		$avatar.attr('src',url);
+	})
+
+	$('.btn3').on('click',function(){
+		$('.img-list').append('<li data-src="http://n.sinaimg.cn/news/20170601/t5Zh-fyfuzny1699424.jpg">2</li>')
+	})
+
+
+	document.querySelector('#username').style
+	document.querySelector('#username').style.borderColor = 'red'
+	//边框变成红色
+	/*
+	$('#username').css('border-color','green')//jQuery用法
+	$('#username').css('border-color')//"rgb(0, 128, 0)"
+	$('#username').css('height')//"16px"
+
+	$('.box').css('background-color','yellow')//修改颜色
+	$('.box').css({'background-color':'#0f0','width':'200px','height':'50px'})//多项修改
+	*/
+	$('.btn4').on('click',function(){
+		$('.box').addClass('active');
+	})
+	$('.btn5').on('click',function(){
+		$('.box').removeClass('active');
+	})
+
+	$('.btn6').on('click',function(){
+		var $box = $('.box');
+	//	if($box.hasClass('active')){
+	//		$box.removeClass('active');
+	//	}else{
+	//		$box.addClass('active');
+	//	}
+
+		$box.toggleClass('active');
+	})
+</script>
+</body>
+</html>

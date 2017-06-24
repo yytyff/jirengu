@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>加载更多</title>
+	<meta charset="utf-8">
+	<style>
+		ul li{
+			margin:0;
+			padding: 0;
+		}
+		#ct li{
+			list-style: none;
+			border:1px solid #ccc;
+			padding:10px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		#load-more{
+			display: block;
+			margin:10px auto;
+			text-align: center;
+			cursor: pointer;
+		}
+		#load-more img{
+			width: 40px;
+			height: 40px;
+		}
+		.btn{
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			width: 80px;
+			border:1px solid #e27272;
+			border-radius: 3px;
+			text-align: center;
+			text-decoration: none;
+			color:#e27272;
+		}
+		.btn:hover{
+			background: green;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<lu id="ct">
+</lu>
+<a id="load-more" class="btn" href="#">
+	加载更多
+</a>
+<script>
+var btn = document.querySelector('#load-more')
+
+	btn.addEventListener('click',function(){
+		var xhr = new XMLHttpRequest()
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState === 4 &&(xhr.status === 200 || xhr.status ==304)){
+				var results =JSON.parse(xhr.responseText)
+				console.log(results)
+			}
+		}
+		xhr.open('get','/loadMore?index=0&lengh=5',true)
+		xhr.send()
+
+		/*
+		//1，我要什么 ['news1', 'news2'... 'new5']
+		//2，我给什么 /loadMore?index=9&length=10
+
+		1.GET
+		2./loadMore
+		3.
+		{
+			index:3,
+			length:5
+		}
+		4.['news1', 'news2'... 'new5']
+		*/
+
+		//var data = getData()
+		//var html = getHtml(data)
+		//render(html)
+	})
+
+
+
+
+
+</script>
+</body>
+</html>

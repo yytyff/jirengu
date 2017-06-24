@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>隐藏</title>
+	<meta charset="utf-8">
+	<style>
+	.box{
+ 	 margin:10px;
+  	 width:150px;
+ 	 height:150px;
+  	 background:red;
+    }
+	</style>
+</head>
+<body>
+<button class="show">show</button>
+  <button class="hide">hide</button>
+<div class="box"></div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+	$('.hide').on('click',function(){
+  $('.box').hide('fast',function(){});
+ // $('.box').hide(2000);
+});
+
+$('.show').on('click',function(){
+  $('.box').show('slow',function(){
+    $(this).html('welcome to china');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动画</title>
+	<meta charset="utf-8">
+	<style>
+		.box{
+  margin:10px;
+  width:100px;
+  height:100px;
+  background:red;
+}
+	</style>
+</head>
+<body>
+	<button>动画</button>
+  	<div class="box"></div>
+  
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+	$('button').on('click',function(){
+    $('.box').animate({
+    marginTop:'500px',
+    'border-radius':'50px'
+  	},1000,function(){
+    console.log('welcome to china');
+  	});
+
+	$('.box').animate({
+	  marginTop:'0',
+	  'border-radius':'0'
+	},1000,function(){
+	  console.log('welcome to china');
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOM</title>
+	<meta charset="utf-8">
+	<style>
+		.box{
+			padding: 20px;
+			border:1px solid red;
+			height:30px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">打开</button>
+	<button id="btn2">打开2</button>
+	<div class="box" style="height: 40px">
+		hello jirengu
+	</div>
+</body>
+
+
+<script>
+	var btn = document.querySelector('#btn');
+	btn.addEventListener('click',function(){
+		window.open('http://jirengu.com')
+	})
+
+	var btn2 = document.querySelector('#btn2');
+	btn2.addEventListener('click',function(){
+		var node =document.createElement('a');
+		window.node = node
+		node.setAttribute('href','http://jirengu.com');
+		node.setAttribute('target','_blank');
+		node.click()
+	})	
+
+	//box = document.querySelector('.box')
+	//box.style.height
+	getComputedStyle(box)
+	getComputedStyle(box)['height']//40px
+	getComputedStyle(box)['width']//1129.6px
+</script>
+</html>

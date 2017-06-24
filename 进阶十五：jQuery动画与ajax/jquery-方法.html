@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script>
+		$(document),ready(function(){
+			
+		})
+	</script>
+</head>
+<body>
+<div class="box">
+	<ul>
+		<li>1</li>
+		<li class="active">2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</div>
+<button id="btn">变色</button>
+<div class="ct">
+	<div class="c1">c1</div>
+	<div class="c2">--</div>
+	<div class="c1">c1</div>
+	<div class="c2 active">--</div>
+	<div class="c1">c1</div>
+</div>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+	$('.box>ul>li').each(function(index,node){
+		//var str = $(node).text()
+		//$(node).text(str+str)
+
+		console.log(this)
+		var str = $(this).text()
+		$(this).text(str+str)
+		//node.innerText = node.innerText +node.innerText
+		console.log(arguments)
+	})
+
+	var arr = $('.box>ul>li').map(function(){
+		return $(this).text()
+	})
+	console.log(arr)
+ 	
+ 	var obj1 ={a:1}
+ 	var obj2 = {b:2, c:3} 
+ 	var obj3 = {b:3, d:5} 
+ 	var obj4 = {}
+
+
+ //	$.extend(obj1,obj2) //obj1== {a:1,b:2,c:3}
+ 	//$.extend(obj1,obj2,obj3) //{a:1,b:3,c:3,d:5} obj1被修改了
+ //	$.extend(obj4,obj1,obj2,obj3)//obj4={a:1,b:3,c:3,d:5},obj1不变
+
+ //	var obj5 = $.extend({},obj1,obj2,obj3)
+
+ 	$('.active').index() //1 (下标)
+
+ 	$('.ct .active').index() //3
+ 	$('.ct .active').index('.c2') //1
+</script>
+</body>
+</html>

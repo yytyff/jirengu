@@ -1,0 +1,18 @@
+
+
+获取$node 到根节点水平、垂直偏移距离：
+http://js.jirengu.com/kodi/1/edit?html,js,output
+
+遍历节点，把每个节点里面的文本内容重复一遍：
+http://js.jirengu.com/joro/1/edit?html,css,js,output
+
+
+
+
+
+
+
+
+
+
+

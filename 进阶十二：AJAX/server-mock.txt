@@ -1,0 +1,40 @@
+
+server-mock是什么
+一款nodejs命令行工具，用于搭建web服务器，模拟网站后端。方便前端开发者Mock数据。基于express.
+
+安装：
+npm 
+
+
+场景1:
+
+mkdir test :创建一个文件夹
+cd .. 返回上一个文件夹
+cd test 打开一个文件夹
+touch index.html 创建一个html 
+
+mock start
+http://localhost:8080/index.html
+
+场景2：为ajax请求mock数据
+1.在终端cd到你的文件夹所在的文件夹
+2.在当前文件夹创建router.js ，该文件是接受并处理后端请求的文件（可认为是网站的后端）
+3.mock init 可创建范例文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

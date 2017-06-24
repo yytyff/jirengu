@@ -1,0 +1,28 @@
+
+http://book.jirengu.com/fe/前端基础/JQuery/获取元素.html
+
+jQuery是对原生JS的封装，他们本身是不同的
+语法不要混在一起用
+
+转换：
+$(btn)===$btn
+$btn[0].innerHTML
+
+$('.box')[0] 是Js DOM对象
+
+$('.box').eq(0) 还是jQuery对象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

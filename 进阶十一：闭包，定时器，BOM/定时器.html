@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定时器</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+
+<script>
+	/*
+	console.log('start...');
+	var clock1 = setTimeout('console.log(2)',1000);
+	var clock2 = setTimeout(doSomething,2000);
+	console.log('end...'); 
+
+	function doSomething(){
+		console.log('hello');
+		console.log('world')
+	}
+
+	var clock3 = setTimeout(function(){    //匿名函数
+		console.log('jirengu')
+	},3000)
+
+	clearTimeout(clock3);//赋予变量，再清楚
+
+	for(var i = 0; i<50; i++){
+		var clock = setTimeout(function(){},10);
+		console.log(clock);
+	}
+----------------------------------------------	
+	var intv = setInterval(function(){
+		console.log(new Date());
+	},5000)
+
+	clearInterval(intv)//停止一个间隔期
+	*/
+	
+
+	/*
+	setTimeout(function(){
+		console.log('延时0s');
+	},0)
+	setTimeout(function(){
+		console.log('延时4s');
+	},4000)
+	setTimeout(function(){
+		console.log('延时3s');
+	},3000)
+	var start = +new Date();
+	for(var i=0; i<10000; i++){
+		console.log(1);
+	}
+	var end = +new Date();
+	console.log('use:',end-start, 'ms');
+	//普通队列先出，才出延时3 ，延时4
+	//----------------
+	//use: 7381 ms
+	//延时0s
+	//延时3s
+	//延时4s
+	*/
+
+//测试最小时间密度
+	
+	var start = +new Date();
+	setTimeout(function(){
+		var end = +new Date();
+		console.log('use:',end-start,'ms')
+	},1)
+
+
+
+
+</script>
+</body>
+</html>
