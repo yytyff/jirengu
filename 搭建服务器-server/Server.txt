@@ -1,0 +1,60 @@
+学习视频地址：
+https://jirengu.com/app/watch/1362/1?vsum=128
+
+Server
+
+硬件（电脑）
+软件（**程序**）
+
+概念：知道各种概念是前提
+
+DOM API 要了解DOM，再去写JS代码
+
+浏览器，服务器，请求，响应
+1，请求 & 响应
+
+请求：一个网址：www.baidu.com
+响应：就是出现百度的页面（HTML）
+
+请求：
+1，GET  /（路径）  HTTP/1.1（协议版本）
+2，KEY1：Value |回车
+   KEY2: Value |回车
+3，回车
+------------------------------请求：head
+4，随便什么都可以-----请求body
+
+响应：
+1，HTTP/1.1 200 OK
+2，KEY1：Value1（Content-type:text/html;charset=utf-8）
+3,回车
+4,随便
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

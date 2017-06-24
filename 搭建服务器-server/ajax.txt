@@ -1,0 +1,65 @@
+https://jirengu.com/app/watch/1837/1?vsum=235
+
+AJAX：
+
+历史：是微软发明的 ActiveX 插件
+      FF 模仿：window.XMLHttpRequest
+      2005 Gmail-AJAX
+	异步 Async JavaScript And XML 
+
+请求：
+
+1，浏览器可以发请求
+ 地址栏输入网址（只有一次机会）
+ link css  （只能请求css）
+ img src=xxx（只能请求img）
+ script src=xxx
+ form表单也可以发请求（当客户提交时） （可以提交随意的，但是一旦提交，页面就刷新）
+http://js.jirengu.com/bezavocohu/1/edit?html,output
+
+
+2，html 是符合html语法的字符串
+   css 是符合css语法的字符串
+   js 是符合js语法的字符串
+
+3，浏览器是不能跨域的，不能用ajax去访问其他网址
+ 
+json 与js 是差不多的，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
