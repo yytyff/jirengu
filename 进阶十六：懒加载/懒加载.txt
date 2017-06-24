@@ -1,0 +1,36 @@
+network + offline 模拟断网
+
+图标去除空隙：
+img{
+  vertical-align:top;
+}
+
+用console.log()来写代码，可以知道结果。
+
+懒加载：
+目的：节省流量
+
+轮播：
+屏幕空间不够，但是广告太多，所以用轮播
+
+shift+上，可以动态：
+
+清除浮动：去学习。
+
+加border，写css的精髓。
+
+https://frankfang.github.io/0601-lazy-demo-and-slides/
+https://frankfang.github.io/0601-lazy-demo-and-slides/slides.html
+
+------------------------------------------------------------------------------
+1.对于所有的 Img标签，把真实的地址放入自定义属性data-img
+2.当滚动页面时，检查页面所有的img标签，看看这个标签是否是出现到我们
+的视野，当出现在我们的视野时，再去判断它是否已经加载过，如果没有加载过，加载它
+
+http://js.jirengu.com/kazizikuku/1/edit?js
+
+http://js.jirengu.com/yazateqivo/1/edit?js
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>懒加载例子</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		let $theImage = $('img[data-src]').first()
+let 图片上边缘距离页面顶部的距离 = $theImage.offset().top
+
+
+$(window).on('scroll', function (e) {
+  let top = window.scrollY
+  if (top + $(window).height() >= 图片上边缘距离页面顶部的距离) {
+    $theImage[0].src = $theImage[0].getAttribute('data-src')
+  } else {
+    console.log('还没到')
+  }
+})
+
+
+$(window).on('scroll', function (e) {
+  let $allImages = $('img[data-src]')
+  let viewportHeight = $(window).height()
+  let scrollTop = window.scrollY
+  $allImages.each(function (index, image) {
+    let imageTop = $(image).offset().top
+    if (imageTop -viewportHeight - 100 <= scrollTop) {
+      image.src = image.getAttribute('data-src')
+    }
+  })
+})
+	</script>
+</body>
+</html>
