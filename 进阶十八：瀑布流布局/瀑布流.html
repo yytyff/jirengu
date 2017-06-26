@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>瀑布流</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	getNews(10, 1).then(function (response) {
+    let data = response.data
+    data.forEach((item) => {
+      let $div = $('<div></div>')
+      let $picture = $('<img/>').prop('src', item.img_url)
+      let $title = $('<h2></h2>').text(item.short_name)
+      $div.append($picture)
+      $div.append($title)
+      $('body').append($div)
+    })
+  })
+//------------------------------------------------------
+
+	let $container = $('#container')
+  let columns = [$('#col1'), $('#col2'), $('#col3')]
+  let totalHeights = [0, 0, 0]
+  let number = 0
+
+  let images = []
+
+  getNews(6, 1).then(function (response) {
+    let data = response.data
+    data.forEach((item, index) => {
+      let img = new Image() // 在内存里生成一张图片
+      images.push(img)
+      img.onload = function () {
+        number += 1
+        if (number === 6) {
+          for (let i = 0; i < images.length; i++) {
+            let shortestColumnIndex = findShortestColumn()
+            console.log(totalHeights)
+            console.log(shortestColumnIndex)
+            columns[shortestColumnIndex].append(images[i])
+            totalHeights[shortestColumnIndex] += images[i].height
+          }
+        }
+      }
+      img.src = randomImage() //下载图片
+    })
+  })
+_
+ 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>瀑布流</title>
+	<meta charset="utf-8">
+	
+	<style>
+		.content{
+			position: relative;
+		}
+		.item{
+			position: absolute;
+			width: 200px;
+			margin-right: 10px;
+			margin-top: 10px;
+			transition:all 1s;
+		}
+		.h1{
+			height:200px;
+			background-color: #f4b300;
+		}
+		.h2{
+			height: 300px;
+			background-color: #691bb8;
+		}
+		.h3{
+			height: 400px;
+			background-color: #006ac1;
+		}
+
+	</style>
+</head>
+<body>
+<div class="content">
+			<div class="item h1">
+				1
+			</div>
+			<div class="item h3">
+				2
+			</div>
+			<div class="item h2">
+				3
+			</div>
+			<div class="item h1">
+				4
+			</div>
+			<div class="item h2">
+				5
+			</div>
+			<div class="item h3">
+				6
+			</div>
+			<div class="item h1">
+				7
+			</div>
+ 				<div class="item h2">
+				8
+			</div>
+    		<div class="item h1">
+				9
+			</div>
+			<div class="item h3">
+				10
+			</div>
+			<div class="item h2">
+				11
+			</div>
+			<div class="item h3">
+				12
+			</div>
+			<div class="item h2">
+				13
+			</div>
+			<div class="item h1">
+				14
+			</div>
+			<div class="item h3">
+				15
+			</div>
+			<div class="item h3">
+				16
+			</div>
+			<div class="item h1">
+				17
+			</div>
+			<div class="item h3">
+				18
+			</div>
+			<div class="item h2">
+				19
+			</div>
+			<div class="item h1">
+				20
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+  <script>
+        waterfull()
+        $(window).resize(function(){
+            waterfull()
+        })
+        function waterfull(){
+            var columnLength = parseInt($('.content').width()/$('.item').width())
+            var itemArr = []
+            for(var i = 0; i < columnLength; i++){
+                itemArr[i] = 0
+            }
+            //对于每一个item,找到高度的最小值
+            $('.item').each(function(){
+                var minValue = Math.min.apply(null, itemArr)
+                console.log(minValue)
+                var minIndex = itemArr.indexOf(minValue)
+                console.log(minIndex)
+                $(this).css({
+                    top: itemArr[minIndex],
+                    left: $(this).outerWidth(true) * minIndex
+                })
+
+                itemArr[minIndex] += $(this).outerHeight(true)
+            })
+        }
+        
+  
+
+/*
+	var WaterFull = (function(){
+		function init(){
+			waterfull()
+			$(window).resize(function(){
+				waterfull()
+			})
+		}
+
+	function waterfull(){
+
+		var colLength =parseInt( $('.content').width()/$('.item').width())
+		var itemArr = []
+		for(var i =0; i<colLength; i++){
+			itemArr[i] = 0
+		}
+
+		$('.item').each(function(){
+			var minValue = Math.min.apply(null,itemArr) //得到最小值
+			var minIndex = itemArr.indexOf(minValue) //得到最小值的下标
+
+			$(this).css({                        //this指item
+				top:itemArr[minIndex],
+				left:$(this).outWidth(true) * minIndex
+			})
+
+			itemArr[minIndex] += $(this).outHeight(true)
+
+		})
+
+	}
+
+		return {
+			init:init
+		}
+	})()
+
+	WaterFull.init()
+
+
+*/
+</script>
+</body>
+</html>
