@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab</title>
+  <meta charset="utf-8">
+  <style>
+    ul, li{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+    .clearfix:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+    .tab-ct{
+      width:600px;
+      margin:20px auto;
+      border:1px solid #ccc;
+      padding:5px;
+ 
+    }
+    .header{
+      border-bottom:1px solid #ccc;
+
+    }
+    .header>li{
+      float:left;
+      border:1px solid #ccc;
+      cursor: pointer;
+      padding:10px 81.8px; 
+    }
+    .header .active{
+      background-color:#ddd;
+    }
+    .content{
+      border:1px solid #ccc;
+      padding:20px 10px;
+    height:200px;
+      
+    }
+    .content>li{
+      display: none;
+    }
+    .content .active{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="tab-ct">
+  <ul class="header">
+    <li class="active">tab1</li>
+    <li>tab2</li>
+    <li>tab3</li>
+  </ul>
+  <ul class="content">
+    <li class="active">ddd</li>
+    <li>ct2</li>
+    <li>ct3</li>
+  </ul>
+</div>
+
+
+
+<script>
+var Tab ={
+  init:function(){
+    this.tabs= document.querySelectorAll('.tab-ct .header>li');
+    this.panels = document.querySelectorAll('.tab-ct .content>li');
+    this.tabHeader = document.querySelector('.tab-ct .header')
+
+    this.bind()
+  },
+
+  bind:function(){
+    var self =this
+    this.tabHeader.onclick =function(e){
+      if(e.target.tagName.toLowerCase() ==='li') {
+        self.tabs.forEach(function(node){
+          node.classList.remove('active')
+        })
+        var index =[].indexOf.call(self.tabs,e.target)
+        self.panels.forEach(function(node){
+          node.classList.remove('active')
+        })
+        self.panels[index].classList.add('active')
+      }
+    }
+  }
+}
+
+/*
+第二种：
+
+    this.tabs.forEach(function(tab){
+      tab.addEventListener('click',function(){
+
+        Tab.tabs.forEach(function(node){
+          node.classList.remove('active')
+        })
+        this.classList.add('active')
+        var index =[].indexOf.call(Tab.tabs,this)
+
+        Tab.panels.forEach(function(node){
+          node.classList.remove('active')
+        })
+        Tab.panels[index].classList.add('active')
+      })
+
+    })
+  }
+
+}
+
+
+*/
+
+/*
+第一种：
+  var Tab ={
+    init:function(){
+
+          var tabs = document.querySelectorAll('.tab-ct .header>li');
+         
+          var panels = document.querySelectorAll('.tab-ct .content>li');
+
+          tabs.forEach(function(tab){
+            tab.addEventListener('click',function(){
+
+              tabs.forEach(function(node){
+                node.classList.remove('active')
+              })
+              this.classList.add('active')
+              var index =[].indexOf.call(tabs,this)
+
+              panels.forEach(function(node){
+                node.classList.remove('active')
+              })
+              panels[index].classList.add('active')
+            })
+
+          })
+
+    }
+  }
+*/
+  Tab.init()
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+</script>
+</body>
+</html>
+    
+    
